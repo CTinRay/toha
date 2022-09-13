@@ -4,10 +4,10 @@
     <title>{{- .Site.Title -}}</title>
     {{ $siteDescription := .Site.Params.description }}
     {{ if (index .Site.Data .Site.Language.Lang).site }}
-      {{ $siteConfig := (index .Site.Data .Site.Language.Lang).site }}
-      {{ if $siteConfig.description }}
-        {{ $siteDescription = $siteConfig.description }}
-      {{ end }}
+    {{ $siteConfig := (index .Site.Data .Site.Language.Lang).site }}
+    {{ if $siteConfig.description }}
+    {{ $siteDescription = $siteConfig.description }}
+    {{ end }}
     {{ end }}
     <meta name="description" content="{{ $siteDescription }}" />
     
@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="{{ "/css/sections/achievements.css" | relURL }}"/>
     <link rel="stylesheet" href="{{ "/css/sections/accomplishments.css" | relURL }}"/>
     <link rel="stylesheet" href="{{ "/css/sections/publications.css" | relURL }}"/>
+    <link rel="stylesheet" href="{{ "/css/sections/people.css" | relURL }}"/>
 
     <!--================= custom style overrides =========================-->
     <link rel="stylesheet" href="{{ "/css/style.css" | relURL }}"/>

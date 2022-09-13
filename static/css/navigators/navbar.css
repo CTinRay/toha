@@ -11,6 +11,29 @@
   text-align: center;
 }
 
+
+#top-navbar {
+    padding: 0;
+}
+
+#top-navbar .container {
+    height: 100%;
+}
+
+#top-nav-items {
+    margin: 0;
+    height: 100%;
+}
+
+#top-nav-items ul {
+    height: 100%;
+}
+
+#top-nav-items ul a {
+    height: 100%;
+    padding-top: 1em;
+}
+
 /* --- initial state start ------ */
 
 .initial-navbar {
@@ -67,15 +90,9 @@
 
 .final-navbar .navbar-nav .active,
 .final-navbar li a:hover {
-  color: #2098d1;
+  color: #900;
   transition: all 0.3s ease-out;
-  border-bottom: 2px solid #2098d1;
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(34, 136, 168, 0.1) 0%
-  );
+  border-bottom: 2px solid #900;
 }
 
 .navbar-collapse.show li a,

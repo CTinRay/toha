@@ -1,0 +1,60 @@
+.faculty-name {
+    margin-bottom: 0;
+}
+
+.faculty-title {
+    color: #444444;
+    font-size: 0.9em;
+    margin-bottom: 0;
+}
+
+.faculty-appoint {
+    color: #444444;
+    margin-bottom: 0.2em;
+    font-size: 0.8em;
+    line-height: 0.85em;
+}
+
+
+.faculty-name > a {
+    color: #900;
+    font-weight: 800;
+}
+
+.faculty-avatar {
+    width: 8em;
+    height: 8em;
+}
+
+.faculty-desc {
+    line-height: 1.2em;
+    margin-bottom: 0.2em;
+    font-size: 0.95em;
+}
+
+.faculty-group > a {
+    color: #900;
+    font-size: 0.9em;
+}
+
+
+.student-avatar {
+    width: 8em;
+    height: 8em;
+    padding: 0.25em;
+    background-color: white;
+}
+
+.student-card {
+    text-align: center;
+}
+
+.student-name {
+    font-size: 1em;
+    color: #900;
+}
+
+.student-title {
+    font-size: 1em;
+    color: #444;
+}

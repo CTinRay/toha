@@ -1,0 +1,76 @@
+{{ $sectionID := replace (lower .section.name) " " "-"  }}
+{{ if .section.id }}
+{{ $sectionID = .section.id }}
+{{ end }}
+
+<div class="container-fluid anchor pb-5 projects-section" id="{{ $sectionID }}">
+  {{ if not (.section.hideTitle) }}
+  <h1 class="text-center">
+    <span id="{{ $sectionID }}"></span>{{ .section.name }}</h1>
+  {{ else }}
+  <h1 class="text-center" style="display: none">
+    <span id="{{ $sectionID }}"></span>{{ .section.name }}</h1>
+  {{ end }}
+  <div class="container ml-auto text-center">
+    <div class="btn-group flex-wrap" role="group" id="project-filter-buttons">
+      {{ range .buttons }}
+      <button type="button" class="btn btn-dark project-filtr-control" data-filter="{{ .filter }}">
+        {{ .name }}
+      </button>
+      {{ end }}
+    </div>
+  </div>
+
+  <h2>Faculty</h2>
+  <div class="container filtr-projects">
+    <div class="row" >
+      {{ range .faculty }}
+      <div
+        class="col-sm-12 col-md-6 col-lg-4 p-2 media faculty-card"
+      >
+        {{ $avatar := resources.Get .avatar }}
+        {{ $avatar := $avatar.Fill "600x600 Top" }}
+        <a href="{{ .website }}">
+          <img class="mr-3 faculty-avatar" src="{{ $avatar.RelPermalink }}" />
+        </a>
+        <div class="media-body">
+          <h5 class="mt-0 faculty-name">
+            <a href="{{ .website }}"> {{ .name.first }} {{ .name.last }} </a>
+          </h5>
+          <div class="faculty-title"> {{ .title }} </div>
+          <div class="faculty-appoint"> {{ .appointment }} </div>
+          <div class="faculty-desc"> {{ .description }} </div>
+          <div class="faculty-group">
+            <a href="{{ .group.website }}"> {{ .group.name }} </a>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+
+  <h2>Students</h2>
+  <div class="container filtr-projects">
+    <div class="row" >
+      {{ range .student }}
+      <div
+        class="col-sm-2 col-md-4 col-lg-2 p-2 student-card"
+      >
+        {{ $avatar := resources.Get .avatar }}
+        {{ $avatar := $avatar.Fill "600x600 Top" }}
+        <a href="{{ .website }}">
+          <img class="student-avatar rounded-circle" src="{{ $avatar.RelPermalink }}" />
+        </a>
+        <div>
+            <a class="student-name" href="{{ .website }}"> {{ .name.first }} {{ .name.last }} </a>
+        </div>
+        <div class="student-title">
+          {{ .title }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+  
+
+</div>

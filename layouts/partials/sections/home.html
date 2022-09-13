@@ -29,7 +29,7 @@
 
 {{/* apply image processing. don't use "Fit" in svg or gif because its not supported */}}
 {{ if and $authorImage (and (ne $authorImage.MediaType.SubType "svg") ( ne $authorImage.MediaType.SubType "gif")) }}
-  {{ $authorImage = $authorImage.Fit "148x148" }}
+  {{/* $authorImage = $authorImage.Fit "148x148" */}}
 {{ end }}
 {{/* get file that matches the filename as specified as src="" in shortcode */}}
 {{ $src := resources.Get $backgroundImage }}
@@ -73,7 +73,7 @@
   {{ $large := $src}}
 {{ end }}
 
-<div class="container-fluid home" id="home">
+<div class="container-fluid home text-center" id="home">
   <style>
     /* 0 to 299 */
     #homePageBackgroundImageDivStyled {
@@ -105,10 +105,13 @@
   <div
     id="homePageBackgroundImageDivStyled"
     class="background container-fluid"
-  ></div>
+  >
+
+    
+  </div>
   <div class="container content text-center">
     <img src="{{ $authorImage.RelPermalink }}"
-      class="rounded-circle mx-auto d-block img-fluid"
+      class="mx-auto d-block img-fluid"
       alt="Author Image"
     />
     <h1 class="greeting"> {{ $author.greeting }} {{ $name }}</h1>
@@ -132,8 +135,10 @@
         {{ if .section.id }}
           {{ $sectionID = .section.id }}
         {{ end }}
-        <a href="#{{ $sectionID }}" aria-label="{{ i18n "read" }} {{ i18n "more" }} - {{ $name }}"><i class="arrow bounce fa fa-chevron-down"></i></a>
-      {{ end }}
+    <a href="#{{ $sectionID }}" aria-label="{{ i18n "read" }} {{ i18n "more" }} - {{ $name }}">
+    </a>
+    {{ end }}
     {{ end }}
   </div>
+  <i class="arrow bounce fa fa-chevron-down"></i>
 </div>

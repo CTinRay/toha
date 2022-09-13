@@ -14,7 +14,7 @@
   background-attachment: fixed;
   background-position: center;
   transform: scale(1.1);
-  filter: blur(3px);
+  /* filter: blur(3px); */
   background-size: cover;
 }
 
@@ -33,13 +33,12 @@
 
 .content {
   position: relative;
-  top: -65%;
+  top: -75%;
   height: 60%;
 }
 
 .home img {
-  width: 148px;
-  height: 148px;
+  width: 100%;
   background-color: #e7e7ef;
   padding: 5px;
   margin-bottom: 10px;

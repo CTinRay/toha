@@ -10,22 +10,22 @@
   {{ $invertedLogo = site.Params.logo.inverted }}
 {{ end }}
 
-{{/* resize the logos. don't resize svg because it is not supported */}}
-{{ if $mainLogo }}
-  {{ $mainLogo = resources.Get $mainLogo}}
-  {{ if and $mainLogo (ne $mainLogo.MediaType.SubType "svg") }}
-    {{ $mainLogo = $mainLogo.Resize "42x" }}
-  {{ end }}
-  {{ $mainLogo = $mainLogo.RelPermalink}}
-{{ end }}
+<!-- {{/* resize the logos. don't resize svg because it is not supported */}}
+     {{ if $mainLogo }}
+     {{ $mainLogo = resources.Get $mainLogo}}
+     {{ if and $mainLogo (ne $mainLogo.MediaType.SubType "svg") }}
+     {{ $mainLogo = $mainLogo.Resize "42x" }}
+     {{ end }}
+     {{ $mainLogo = $mainLogo.RelPermalink}}
+     {{ end }} -->
 
-{{ if $invertedLogo }}
-  {{ $invertedLogo = resources.Get $invertedLogo}}
-  {{ if and $invertedLogo (ne $invertedLogo.MediaType.SubType "svg")}}
-    {{ $invertedLogo = $invertedLogo.Resize "42x" }}
-  {{ end }}
-  {{ $invertedLogo = $invertedLogo.RelPermalink}}
-{{ end }}
+<!-- {{ if $invertedLogo }}
+     {{ $invertedLogo = resources.Get $invertedLogo}}
+     {{ if and $invertedLogo (ne $invertedLogo.MediaType.SubType "svg")}}
+     {{ $invertedLogo = $invertedLogo.Resize "42x" }}
+     {{ end }}
+     {{ $invertedLogo = $invertedLogo.RelPermalink}}
+     {{ end }} -->
 
 <nav class="navbar navbar-expand-xl top-navbar final-navbar shadow">
   <div class="container">
