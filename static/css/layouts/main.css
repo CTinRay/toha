@@ -333,9 +333,31 @@ mark {
 
 .footer {
   color: #8392a5 !important;
-  background-color: #900;
+  background-color: #231f20;
   position: relative;
   z-index: 9999;
+  padding-top: 2em;
+}
+
+.footer .viterbi {
+    height: 5em;
+}
+
+.footer > .container > .row > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+@media (max-width: 399px) {
+    .footer .text-right {
+        display: none !important;
+    }
+}
+
+#theme img {
+    vertical-align: bottom;
+    width: 20px;
 }
 
 .footer h5 {

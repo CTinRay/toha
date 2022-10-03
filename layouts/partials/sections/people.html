@@ -3,7 +3,7 @@
 {{ $sectionID = .section.id }}
 {{ end }}
 
-<div class="container-fluid anchor pb-5 projects-section" id="{{ $sectionID }}">
+<div class="container-fluid anchor pb-5" id="{{ $sectionID }}">
   {{ if not (.section.hideTitle) }}
   <h1 class="text-center">
     <span id="{{ $sectionID }}"></span>{{ .section.name }}</h1>
@@ -22,7 +22,7 @@
   </div>
 
   <h2>Faculty</h2>
-  <div class="container filtr-projects">
+  <div class="container">
     <div class="row justify-content-center" >
       {{ range sort .faculty "name.last"  }}
       <div
@@ -43,9 +43,9 @@
   </div>
 
   <h2>Students</h2>
-  <div class="container filtr-projects">
+  <div class="container">
     <div class="row justify-content-center" >
-      {{ range sort .phd_students "name.last"  }}
+      {{ range (sort .phd_students "name.last") | append (sort .other_students "name.last") }}
       <div class="student-card col-lg-2 col-md-4 col-6" >
         {{ $avatar := resources.Get .avatar }}
         {{ $avatar := $avatar.Fill "600x600 Top" }}
@@ -57,6 +57,27 @@
         </div>
         <div class="student-title">
           {{ .title }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+
+  <h2>Alumni</h2>
+  <div class="container">
+    <div class="row justify-content-center" >
+      {{ range sort .alumni "name.last"  }}
+      <div class="student-card col-lg-2 col-md-4 col-6" >
+        {{ $avatar := resources.Get .avatar }}
+        {{ $avatar := $avatar.Fill "600x600 Top" }}
+        <a href="{{ .website }}">
+          <img class="student-avatar rounded-circle" src="{{ $avatar.RelPermalink }}" />
+        </a>
+        <div>
+          <a class="student-name" href="{{ .website }}"> {{ .name.first }} {{ .name.last }} </a>
+        </div>
+        <div class="student-title">
+          {{ .year }}
         </div>
       </div>
       {{ end }}
