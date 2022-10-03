@@ -1,8 +1,44 @@
 
 .group-card {
-    margin: 1.5em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
     padding: 0.5em;
 }
+
+@media (min-width: 400px) {
+    .group-card {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .logo-wrapper {
+        width: 25%;
+        text-align: center;
+        margin-right: 2em;
+    }
+}
+
+@media (max-width: 399px) {
+    .group-card h5 {
+        text-align: center;
+        margin: 0em;
+    }
+
+    .group-card .pi {
+        text-align: center;
+    }
+
+    .logo-wrapper {
+        width: 100%;
+        text-align: center;
+        margin: 1em;
+    }
+
+    .description {
+        text-align: center;
+    }
+}
+
 
 .group-logo {
     max-height: 14em;
@@ -10,11 +46,6 @@
 }
 
 
-.logo-wrapper {
-    width: 25%;
-    text-align: center;
-    margin-right: 2em;
-}
 
 
 .group-card h5 a{

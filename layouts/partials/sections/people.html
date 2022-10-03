@@ -44,11 +44,9 @@
 
   <h2>Students</h2>
   <div class="container filtr-projects">
-    <div class="row" >
+    <div class="row justify-content-center" >
       {{ range sort .phd_students "name.last"  }}
-      <div
-        class="col-sm-2 col-md-4 col-lg-2 p-2 student-card"
-      >
+      <div class="student-card col-lg-2 col-md-4 col-6" >
         {{ $avatar := resources.Get .avatar }}
         {{ $avatar := $avatar.Fill "600x600 Top" }}
         <a href="{{ .website }}">
