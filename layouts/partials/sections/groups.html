@@ -1,0 +1,63 @@
+{{ $sectionID := replace (lower .section.name) " " "-"  }}
+{{ if .section.id }}
+{{ $sectionID = .section.id }}
+{{ end }}
+
+<div class="container-fluid anchor pb-5 group-section" id="{{ $sectionID }}">
+  {{ if not (.section.hideTitle) }}
+  <h1 class="text-center">
+    <span id="{{ $sectionID }}"></span>{{ .section.name }}</h1>
+  {{ else }}
+  <h1 class="text-center" style="display: none">
+    <span id="{{ $sectionID }}"></span>{{ .section.name }}</h1>
+  {{ end }}
+
+  <div class="row justify-content-center groups" >
+
+    {{ range .groups }}
+    <div class="media group-card col-sm-12 col-md-12 col-lg-10">      
+      <div class="logo-wrapper">
+        {{ $logo := resources.Get .logo }}
+        <a href="{{ .lab_website }}">
+          <img class="mr-3 group-logo" src="{{ $logo.RelPermalink }}" alt="{{ .name }} logo">
+        </a>
+      </div>
+      <div class="media-body">        
+        <h5 class="mt-0">
+          <a href="{{ .lab_website }}">
+            {{ .name }}
+          </a>
+        </h5>        
+        <p class="pi"><a href="{{ .pi_website }}">PI: {{ .pi }}</a></p>
+        <p class="description">
+          {{ .description }}
+        </p>
+      </div>
+    </div>
+    {{ end }}        
+  </div>
+
+  <h2>Affliated Groups</h2>
+
+  <div class="container filtr-projects">
+    <div class="row justify-content-left" >
+      {{ range .affliated }}
+      <div
+        class="col-sm-4 col-md-3 col-lg-3 p-2 affliated-card"
+      >
+        {{ $logo := resources.Get .logo }}
+        {{ $logo := $logo.Fit "500x500" }}
+        <div class="affliated-logo-wrapper" >
+          <a href="{{ .website }}">
+            <img class="affliated-logo" src="{{ $logo.RelPermalink }}" />
+          </a>
+        </div>
+        <h5 class="affliated-group-name">
+          <a href="{{ .website }}"> {{ .name }} </a>
+        </h5>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+  
+</div>

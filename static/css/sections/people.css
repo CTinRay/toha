@@ -1,10 +1,16 @@
+.faculty-card {
+    text-align: center;
+    margin: 2em;
+}
+
 .faculty-name {
+    padding-top: 1em;
     margin-bottom: 0;
 }
 
 .faculty-title {
     color: #444444;
-    font-size: 0.9em;
+    font-size: 1em;
     margin-bottom: 0;
 }
 
@@ -19,11 +25,12 @@
 .faculty-name > a {
     color: #900;
     font-weight: 800;
+    font-size: 1.25em;
 }
 
 .faculty-avatar {
-    width: 8em;
-    height: 8em;
+    width: 13em;
+    height: 13em;
 }
 
 .faculty-desc {
@@ -39,18 +46,19 @@
 
 
 .student-avatar {
-    width: 8em;
-    height: 8em;
+    width: 9em;
+    height: 9em;
     padding: 0.25em;
     background-color: white;
 }
 
 .student-card {
     text-align: center;
+    margin-bottom: 2em;
 }
 
 .student-name {
-    font-size: 1em;
+    font-size: 1.1em;
     color: #900;
 }
 

@@ -23,27 +23,20 @@
 
   <h2>Faculty</h2>
   <div class="container filtr-projects">
-    <div class="row" >
-      {{ range .faculty }}
+    <div class="row justify-content-center" >
+      {{ range sort .faculty "name.last"  }}
       <div
-        class="col-sm-12 col-md-6 col-lg-4 p-2 media faculty-card"
+        class="col-sm-12 col-md-6 col-lg-3 p-2 faculty-card"
       >
         {{ $avatar := resources.Get .avatar }}
         {{ $avatar := $avatar.Fill "600x600 Top" }}
         <a href="{{ .website }}">
-          <img class="mr-3 faculty-avatar" src="{{ $avatar.RelPermalink }}" />
+          <img class="faculty-avatar" src="{{ $avatar.RelPermalink }}" />
         </a>
-        <div class="media-body">
-          <h5 class="mt-0 faculty-name">
-            <a href="{{ .website }}"> {{ .name.first }} {{ .name.last }} </a>
-          </h5>
-          <div class="faculty-title"> {{ .title }} </div>
-          <div class="faculty-appoint"> {{ .appointment }} </div>
-          <div class="faculty-desc"> {{ .description }} </div>
-          <div class="faculty-group">
-            <a href="{{ .group.website }}"> {{ .group.name }} </a>
-          </div>
-        </div>
+        <h5 class="faculty-name">
+          <a href="{{ .website }}"> {{ .name.first }} {{ .name.last }} </a>
+        </h5>
+        <div class="faculty-title"> {{ .title }} </div>
       </div>
       {{ end }}
     </div>
@@ -52,7 +45,7 @@
   <h2>Students</h2>
   <div class="container filtr-projects">
     <div class="row" >
-      {{ range .student }}
+      {{ range sort .phd_students "name.last"  }}
       <div
         class="col-sm-2 col-md-4 col-lg-2 p-2 student-card"
       >

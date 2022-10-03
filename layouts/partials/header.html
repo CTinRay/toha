@@ -3,21 +3,21 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
 <!-- ============ import common css ========== -->
-<link rel="stylesheet" href="{{ "/css/bootstrap.min.css" | relURL }}"/>
-<link rel="stylesheet" href="{{ "/css/layouts/main.css" | relURL }}"/>
-<link rel="stylesheet" href="{{ "/css/navigators/navbar.css" | relURL }}"/>
-<link rel="stylesheet" href="{{ "/css/plyr.css" | relURL }}"/>
-<link rel="stylesheet" href="{{ "/css/flag-icon.min.css" | relURL }}"/>
+<link rel="stylesheet" href="{{ "css/bootstrap.min.css" | relURL }}"/>
+<link rel="stylesheet" href="{{ "css/layouts/main.css" | relURL }}"/>
+<link rel="stylesheet" href="{{ "css/navigators/navbar.css" | relURL }}"/>
+<link rel="stylesheet" href="{{ "css/plyr.css" | relURL }}"/>
+<link rel="stylesheet" href="{{ "css/flag-icon.min.css" | relURL }}"/>
 
 <!--=================== fonts ==============================-->
-<link rel="stylesheet" href="{{ "/google-fonts/Mulish/mulish.css" | relURL }}"/>
+<link rel="stylesheet" href="{{ "google-fonts/Mulish/mulish.css" | relURL }}"/>
 
 <!--=================== icons ==============================-->
-<link rel="stylesheet" href="{{ "/fontawesome/css/all.min.css" | relURL }}"/>
+<link rel="stylesheet" href="{{ "fontawesome/css/all.min.css" | relURL }}"/>
 
 <!--=================== dark mode ==========================-->
 {{ if site.Params.darkMode.enable }}
-<link rel="stylesheet" href="{{ "/css/colortheme/colortheme.css" | relURL }}"/>
+<link rel="stylesheet" href="{{ "css/colortheme/colortheme.css" | relURL }}"/>
 {{ end }}
 
 <!--================= fab-icon =========================-->
@@ -25,5 +25,5 @@
 {{ if site.Params.logo.favicon }}
   {{ $favicon := site.Params.logo.favicon }}
 
-  <link rel="icon" type="image/png" href="{{ $favicon }}" />
+  <link rel="icon" type="image/png" href="{{ $favicon | relURL }}" />
 {{end}}
