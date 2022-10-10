@@ -44,11 +44,15 @@
   background-color: rgba(68, 68, 68, 0.2);
 }
 
+.navbar-brand {
+    margin-left: 0.25em;
+}
+
 .initial-navbar .navbar-brand {
   color: white;
   font-weight: 600;
   font-size: 2em;
-  font-family: "Serif";
+  font-family: "Source Serif Pro", serif;
 }
 .initial-navbar .navbar-brand > .usc {
     color: #fc0;
@@ -95,7 +99,7 @@
   font-weight: 600;
   font-weight: 600;
   font-size: 2em;
-  font-family: "Source Serif 4";
+  font-family: "Source Serif Pro", serif;;
 }
 
 .final-navbar .navbar-brand > .usc {

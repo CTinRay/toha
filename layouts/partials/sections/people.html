@@ -53,7 +53,10 @@
           <img class="student-avatar rounded-circle" src="{{ $avatar.RelPermalink }}" />
         </a>
         <div>
-            <a class="student-name" href="{{ .website }}"> {{ .name.first }} {{ .name.last }} </a>
+          <a class="student-name" href="{{ .website }}"> {{ .name.first }} {{ .name.last }} </a>
+        </div>
+        <div class="student-lab">
+          {{ .lab }}
         </div>
         <div class="student-title">
           {{ .title }}
@@ -76,8 +79,8 @@
         <div>
           <a class="student-name" href="{{ .website }}"> {{ .name.first }} {{ .name.last }} </a>
         </div>
-        <div class="student-title">
-          {{ .year }}
+        <div class="student-lab">
+          {{ .lab }} ({{ .year }})
         </div>
       </div>
       {{ end }}

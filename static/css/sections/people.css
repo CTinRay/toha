@@ -59,10 +59,19 @@
 
 .student-name {
     font-size: 1.1em;
+    font-weight: 500;
     color: #900;
+    line-height: 1em;
 }
 
 .student-title {
     font-size: 1em;
+    color: #fbbf15;
+    line-height: 1em;
+}
+
+.student-lab {
+    font-size: 1em;
     color: #444;
+    line-height: 1em;
 }
