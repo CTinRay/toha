@@ -66,26 +66,26 @@
     </div>
   </div>
 
-  <h2>Alumni</h2>
-  <div class="container">
-    <div class="row justify-content-center" >
-      {{ range sort .alumni "name.last"  }}
-      <div class="student-card col-lg-2 col-md-4 col-6" >
-        {{ $avatar := resources.Get .avatar }}
-        {{ $avatar := $avatar.Fill "600x600 Top" }}
-        <a href="{{ .website }}">
-          <img class="student-avatar rounded-circle" src="{{ $avatar.RelPermalink }}" />
-        </a>
-        <div>
-          <a class="student-name" href="{{ .website }}"> {{ .name.first }} {{ .name.last }} </a>
-        </div>
-        <div class="student-lab">
-          {{ .lab }} ({{ .year }})
-        </div>
-      </div>
-      {{ end }}
-    </div>
-  </div>
+  <!-- <h2>Alumni</h2>
+       <div class="container">
+       <div class="row justify-content-center" >
+       {{ range sort .alumni "name.last"  }}
+       <div class="student-card col-lg-2 col-md-4 col-6" >
+       {{ $avatar := resources.Get .avatar }}
+       {{ $avatar := $avatar.Fill "600x600 Top" }}
+       <a href="{{ .website }}">
+       <img class="student-avatar rounded-circle" src="{{ $avatar.RelPermalink }}" />
+       </a>
+       <div>
+       <a class="student-name" href="{{ .website }}"> {{ .name.first }} {{ .name.last }} </a>
+       </div>
+       <div class="student-lab">
+       {{ .lab }} ({{ .year }})
+       </div>
+       </div>
+       {{ end }}
+       </div>
+       </div> -->
   
 
 </div>
