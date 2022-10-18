@@ -48,7 +48,7 @@
       {{ range (sort .phd_students "name.last") | append (sort .other_students "name.last") }}
       <div class="student-card col-lg-5col col-md-4 col-6" >
         {{ $avatar := resources.Get .avatar }}
-        {{ $avatar := $avatar.Fill "600x600 Top" }}
+        {{ $avatar := $avatar.Fill "300x300 Top" }}
         <a href="{{ .website }}">
           <img class="student-avatar rounded-circle" src="{{ $avatar.RelPermalink }}" />
         </a>
