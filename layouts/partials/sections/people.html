@@ -26,7 +26,7 @@
     <div class="row justify-content-center" >
       {{ range sort .faculty "name.last"  }}
       <div
-        class="col-sm-12 col-md-6 col-lg-3 p-2 faculty-card"
+        class="col-sm-12 col-md-4 col-lg-3 p-2 faculty-card"
       >
         {{ $avatar := resources.Get .avatar }}
         {{ $avatar := $avatar.Fill "600x600 Top" }}
@@ -46,7 +46,7 @@
   <div class="container">
     <div class="row justify-content-center" >
       {{ range (sort .phd_students "name.last") | append (sort .other_students "name.last") }}
-      <div class="student-card col-lg-2 col-md-4 col-6" >
+      <div class="student-card col-lg-5col col-md-4 col-6" >
         {{ $avatar := resources.Get .avatar }}
         {{ $avatar := $avatar.Fill "600x600 Top" }}
         <a href="{{ .website }}">
