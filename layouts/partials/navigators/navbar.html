@@ -37,6 +37,7 @@
   {{ $invertedLogo = $invertedLogo.RelPermalink}}
 {{ end }}
 
+
 {{ $customMenus := site.Params.customMenus }}
 {{ if (index site.Data site.Language.Lang).site.customMenus }}
   {{ $customMenus = (index site.Data site.Language.Lang).site.customMenus }}
@@ -53,21 +54,11 @@
       {{ if $invertedLogo }}
         <img src="{{ $invertedLogo }}" id="logo" alt="Logo">
       {{ end }}
-        <span class="usc">USC</span><span class="nlp">NLP</span>        
+      <span class="usc">USC</span><span class="nlp">NLP</span>        
     </a>
-    <button
-      class="navbar-toggler navbar-dark"
-      id="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#top-nav-items"
-      aria-label="menu"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
+    
     <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link" href="#home">
               {{ i18n "home" }}
@@ -131,6 +122,22 @@
         {{ end }}
       </ul>
     </div>
+
+    <a class="usc-logo-wrapper">
+       {{ partial "navigators/usc-logo.svg" . }}    
+    </a>    
+
+    <button
+      class="navbar-toggler navbar-dark"
+      id="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#top-nav-items"
+      aria-label="menu"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
   </div>
   <!-- Store the logo information in a hidden img for the JS -->
   {{ if $mainLogo }}
