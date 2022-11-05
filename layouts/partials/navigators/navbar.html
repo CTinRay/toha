@@ -110,7 +110,7 @@
           {{- end }}
           {{ $shouldAddSeparator:= partial "helpers/add-navbar-separator.html" . }}
           {{ if $shouldAddSeparator }}
-            <div class="dropdown-divider" id="top-navbar-divider"></div>
+              <!-- <div class="dropdown-divider" id="top-navbar-divider"></div> -->
           {{ end }}
           {{ if $blogEnabled }}
             <li class="nav-item">
@@ -125,7 +125,7 @@
           {{ range $customMenus }}
               {{ if (not .hideFromNavbar) }}
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ .url }}">{{ .name }}</a>
+                  <a class="nav-link" href="{{ .url }}" target="_blank">{{ .name }}</a>
                 </li>
               {{ end }}
           {{ end }}
